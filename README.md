@@ -1,4 +1,4 @@
-# LearningLanguagesWebsite
+# qvcademy
 This is a public repo for the qvcademy website designed by Quinn Morrison, Vincent Pestilli, Cydney Miller for the benefit of all students and people trying to learn to program.
 
 This project aims to adress the need for learning languages quickly in order to streamline the barrier for entry working with projects unfamiliar to programmers who already understand the basics of programming such as variables, loops, functions, comparison operators, and even some data structures like linked lists and hash tables.
