@@ -12,5 +12,8 @@ export default function LandingPage() {
         }}
     >
         <Navbar />
+        <div class="container">
+            <h1 className="text-pink text-9xl font-mono">Welcome Devs!</h1>
+        </div>
     </div>
 }
