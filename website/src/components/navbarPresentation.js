@@ -21,7 +21,7 @@ export default function Navbar () {
               <a href="/" className="text-white hover:bg-dark-purple px-3 py-2 rounded">Contact</a>
             </div>
           </div>
-
+          
           {/* Hamburger Icon for Mobile */}
           <div className="md:hidden">
             <button

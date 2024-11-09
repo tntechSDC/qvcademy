@@ -9,7 +9,9 @@ module.exports = {
     extend: {
       colors: {
         'purple': '#382241',
-        'dark-purple' : '#221427',
+        'dark-purple': '#221427',
+        'teal': '#5c7683',
+        'yellow':'#ffb866',
       }
     },
   },
