@@ -15,10 +15,10 @@ export default function Navbar () {
             
             {/* Links for larger screens */}
             <div className="hidden md:flex space-x-4">
-              <a href="/" className="text-white hover:bg-dark-purple px-3 py-2 rounded">Get Started</a>
-              <a href="/" className="text-white hover:bg-dark-purple px-3 py-2 rounded">Program</a>
-              <a href="/" className="text-white hover:bg-dark-purple px-3 py-2 rounded">Learn</a>
-              <a href="/" className="text-white hover:bg-dark-purple px-3 py-2 rounded">Contact</a>
+              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Get Started</a>
+              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Program</a>
+              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Learn</a>
+              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Contact Us</a>
             </div>
           </div>
           
@@ -26,7 +26,7 @@ export default function Navbar () {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-gray-200 focus:outline-none"
+              className="text-pink hover:text-dark-purple-200 focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -48,10 +48,10 @@ export default function Navbar () {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden mt-2">
-            <a href="/" className="block text-white hover:bg-dark-purple px-3 py-2 rounded">Login/Register</a>
-            <a href="/about" className="block text-white hover:bg-dark-purple px-3 py-2 rounded">About</a>
-            <a href="/services" className="block text-white hover:bg-dark-purple px-3 py-2 rounded">Services</a>
-            <a href="/contact" className="block text-white hover:bg-dark-purple px-3 py-2 rounded">Contact</a>
+            <a href="/" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">Login/Register</a>
+            <a href="/about" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">About</a>
+            <a href="/services" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">Services</a>
+            <a href="/contact" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">Contact</a>
           </div>
         )}
       </div>

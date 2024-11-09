@@ -12,8 +12,10 @@ export default function LandingPage() {
         }}
     >
         <Navbar />
-        <div class="container">
-            <h1 className="text-pink text-9xl font-mono">Welcome Devs!</h1>
+        <div className="text-left pl-16 md:pl-36 pt-16">
+            <h1 className="text-pink text-8xl md:text-9xl font-mono">Welcome <br />Devs!</h1>
+            <h2 className="text-pink text-2xl md:text-5xl font-sans pt-8">We're here to make your life <br /> <b><i>easier.</i></b></h2>
         </div>
+        
     </div>
 }
