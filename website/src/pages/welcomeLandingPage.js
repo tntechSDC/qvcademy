@@ -75,7 +75,7 @@ export default function LandingPage() {
                 </ul>
         </div>
 
-        <div className="pt-48 pl-16 text-left text-pink">
+        <div className="pt-32 text-yellow md:pt-48 pl-16 text-left md:text-pink">
             <h1 className="text-4xl md:text-6xl font-mono">Contact Us</h1>
             <div className="pt-8"></div>
             <ul className="list-disc ml-4">
@@ -85,7 +85,7 @@ export default function LandingPage() {
             </ul>
         </div>
 
-        <hr className="w-full border-t border-pink my-8" />
-
+        <hr className="w-full border-t border-yellow my-8 md:border-pink" />
+        
     </div>
 }
