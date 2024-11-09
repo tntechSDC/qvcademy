@@ -48,7 +48,6 @@ export default function Navbar () {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden mt-2">
-            <a href="/" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">Login/Register</a>
             <a href="/about" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">About</a>
             <a href="/services" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">Services</a>
             <a href="/contact" className="block text-pink  hover:bg-dark-purple px-3 py-2 rounded">Contact</a>
