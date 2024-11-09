@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
 import logo from "../images/qvcademy_logo_11:8.png";
 
 export default function Navbar () {
@@ -9,16 +10,15 @@ export default function Navbar () {
           {/* Left Aligned Logo and Links */}
           <div className="flex items-center space-x-4">
             {/* Logo */}
-            <a href="/" className="flex-shrink-0">
+            <NavLink to="/" className="flex-shrink-0">
               <img src={logo} alt="Brand Logo" className="h-10 w-auto" />
-            </a>
+            </NavLink>
             
             {/* Links for larger screens */}
             <div className="hidden md:flex space-x-4">
-              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Get Started</a>
-              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Program</a>
-              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Learn</a>
-              <a href="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Contact Us</a>
+              <NavLink to="/get-started" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Get Started</NavLink>
+              <NavLink to="/problems" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Program</NavLink>
+              <NavLink to="/learning" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Learn</NavLink>
             </div>
           </div>
           
