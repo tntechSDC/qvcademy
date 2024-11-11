@@ -8,6 +8,7 @@ import ProblemsHome from './mainPages/problemsLandingPage.js';
 import ContactUs from './mainPages/aboutUs.js';
 import Login from './mainPages/login.js';
 import Register from './mainPages/register.js';
+import CppHome from './languagePages/cpp/cppGettingStarted.js';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
            <Route path="/contactUs" element={<ContactUs />} />
            <Route path="/login" element={<Login />} />
            <Route path="/register" element={<Register />} />
+           <Route path="/cppHome" element={<CppHome />} />
           <Route path="*" element={<NoPage />} />
        </Routes>
     </>

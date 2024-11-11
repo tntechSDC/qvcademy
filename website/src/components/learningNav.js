@@ -48,7 +48,7 @@ export default function LearningNavbar() {
                         {/* Dropdown Items */}
                         {dropdownOpen && (
                             <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-purple w-32 rounded-md">
-                                <NavLink to="/get-started" className="block px-6 py-2 text-pink hover:bg-dark-purple rounded-md">C++</NavLink>
+                                <NavLink to="/cppHome" className="block px-6 py-2 text-pink hover:bg-dark-purple rounded-md">C++</NavLink>
                                 <NavLink to="/get-started" className="block px-6 py-2 text-pink hover:bg-dark-purple rounded-md">C</NavLink>
                                 <NavLink to="/get-started" className="block px-6 py-2 text-pink hover:bg-dark-purple rounded-md">C#</NavLink>
                                 <NavLink to="/get-started" className="block px-6 py-2 text-pink hover:bg-dark-purple rounded-md">Swift</NavLink>
