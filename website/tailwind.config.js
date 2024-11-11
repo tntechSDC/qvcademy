@@ -12,7 +12,8 @@ module.exports = {
         'dark-purple': '#221427',
         'teal': '#5c7683',
         'yellow': '#ffb866',
-        'pink':'#eac4d1',
+        'pink': '#eac4d1',
+        'light-gray':'#a19da8',
       }
     },
     container: {

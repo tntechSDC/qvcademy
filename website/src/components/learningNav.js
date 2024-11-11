@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import logo from "../images/qvcademy_logo_11_8.png";
 import { UserCircleIcon } from '@heroicons/react/24/solid';
 import { NavLink } from "react-router-dom";
 
 export default function LearningNavbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null); //holds a reference to dropdown container
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        function handleClickOutside(event) {
+            // Check if the click was outside the dropdown
+            if (dropdownRef.current && dropdownRef.current.contains(event.target) === false) {
+                setDropdownOpen(false); //closes the drop down
+            }
+        }
+        
+        // Bind the event listener
+        document.addEventListener('mousedown', handleClickOutside);
+        
+        // Clean up the event listener on close
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
     return <nav className="bg-purple fixed top-0 w-full">
@@ -20,12 +37,12 @@ export default function LearningNavbar() {
                 <NavLink to="/problems" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Program</NavLink>
                 <NavLink to="/learning" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Learn</NavLink>
                 <NavLink to="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Contact Us</NavLink>
-                    <div className="relative">
+                    <div className="relative" ref={dropdownRef}>
                         <button
-                            onClick={toggleDropdown}
-                            className="text-pink pt-2 hover:bg-dark-puple"
+                            onMouseEnter={toggleDropdown}
+                            className="text-pink pt-2 hover:bg-dark-purple"
                         >
-                            Languages
+                            Languages &#x25BC;
                         </button>
 
                         {/* Dropdown Items */}

@@ -19,6 +19,7 @@ export default function Navbar () {
               <NavLink to="/get-started" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Get Started</NavLink>
               <NavLink to="/problems" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Program</NavLink>
               <NavLink to="/learning" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Learn</NavLink>
+              <NavLink to="/register" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Register</NavLink>
             </div>
           </div>
           
