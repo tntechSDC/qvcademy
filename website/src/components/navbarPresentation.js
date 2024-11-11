@@ -5,7 +5,7 @@ import logo from "../images/qvcademy_logo_11_8.png";
 
 export default function Navbar () {
     const [isOpen, setIsOpen] = useState(false);
-    return <nav className="top-0 left-0 w-full z-50">
+    return <nav className="top-0 left-0 w-full z-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left Aligned Logo and Links */}
