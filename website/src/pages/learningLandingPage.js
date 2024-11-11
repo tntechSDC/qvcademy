@@ -1,7 +1,8 @@
 import React from 'react';
+import LearningNavbar from '../components/learningNav';
 
 export default function LearningHome() {
     return (
-        <h1>Learning Landing Page</h1>
+        <LearningNavbar />
     )
 }
