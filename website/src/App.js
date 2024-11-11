@@ -1,11 +1,11 @@
 import './App.css';
-import LandingPage from "./pages/welcomeLandingPage.js";
+import LandingPage from "./mainPages/welcomeLandingPage.js";
 import { Routes, Route } from "react-router-dom";
-import NoPage from './pages/error404page.js';
-import GettingStarted from './pages/gettingStartedPage.js';
-import LearningHome from './pages/learningLandingPage.js';
-import ProblemsHome from './pages/problemsLandingPage.js';
-import ContactUs from './pages/aboutUs.js';
+import NoPage from './mainPages/error404page.js';
+import GettingStarted from './mainPages/gettingStartedPage.js';
+import LearningHome from './mainPages/learningLandingPage.js';
+import ProblemsHome from './mainPages/problemsLandingPage.js';
+import ContactUs from './mainPages/aboutUs.js';
 
 function App() {
   return (
