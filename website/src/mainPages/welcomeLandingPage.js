@@ -3,6 +3,7 @@ import background from "../images/background_no_text.jpg";
 import Navbar from "../components/navbarPresentation.js";
 import placeholder1 from "../images/placeholder1.jpg";
 import placeholder2 from "../images/placeholder2.jpg";
+//quinn worked on this, ask me if you have questions on this code
 
 export default function LandingPage() {
     return <div

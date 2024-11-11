@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import logo from "../images/qvcademy_logo_11_8.png";
+//quinn worked on this, ask me if you have questions on this code
 
 export default function Navbar () {
     const [isOpen, setIsOpen] = useState(false);

@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from "../images/qvcademy_logo_11_8.png";
 import { NavLink } from "react-router-dom";
+//quinn worked on this, ask me if you have questions on this code
 
 export default function Register() {
     return (
+        
         <div className="bg-gradient-to-r from-purple from-30% to-teal to-70% h-screen">
             <div className="flex justify-between">
                 <div className="pl-48 pt-56">

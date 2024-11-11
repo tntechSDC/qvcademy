@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import logo from "../images/qvcademy_logo_11_8.png";
 import { UserCircleIcon } from '@heroicons/react/24/solid';
 import { NavLink } from "react-router-dom";
+//quinn worked on this, ask me if you have questions on this code
 
 export default function LearningNavbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false);

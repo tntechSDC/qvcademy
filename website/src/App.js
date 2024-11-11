@@ -12,7 +12,8 @@ import CppHome from './languagePages/cpp/cppGettingStarted.js';
 
 function App() {
   return (
-    <>
+     <>
+        {/*routes for the code*/}
        <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/problems" element={<ProblemsHome />} />
