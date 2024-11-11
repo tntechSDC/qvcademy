@@ -1,7 +1,8 @@
 import React from 'react';
+import FunctionalNavbar from '../components/navbarDefault';
 
 export default function GettingStarted() {
     return (
-        <h1>Getting Started</h1>
+        <FunctionalNavbar />
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import logo from "../images/qvcademy_logo_11:8.png";
+import logo from "../images/qvcademy_logo_11_8.png";
 
 export default function Navbar () {
     const [isOpen, setIsOpen] = useState(false);
