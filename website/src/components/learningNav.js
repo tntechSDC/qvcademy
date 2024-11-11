@@ -46,9 +46,9 @@ export default function LearningNavbar() {
                         )}
                     </div>
           </div>
-          <div className="relative">
-              <UserCircleIcon className="h-10 w-10 text-pink hover:text-gray-400 cursor-pointer" />
-          </div>
+          <NavLink to="/login" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">
+            <UserCircleIcon className="h-10 w-10 text-pink hover:text-gray-400 cursor-pointer" />
+            </NavLink>
         </div>
             
          </div>

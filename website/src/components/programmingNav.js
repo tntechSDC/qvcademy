@@ -16,11 +16,11 @@ export default function programmingNavbar() {
                 <NavLink to="/get-started" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Get Started</NavLink>
               <NavLink to="/problems" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Program</NavLink>
               <NavLink to="/learning" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Learn</NavLink>
-                <NavLink to="/" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Contact</NavLink>
+                <NavLink to="/contactUs" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Contact</NavLink>
           </div>
-          <div className="relative">
-              <UserCircleIcon className="h-10 w-10 text-pink hover:text-gray-400 cursor-pointer" />
-          </div>
+            <NavLink to="/login" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">
+            <UserCircleIcon className="h-10 w-10 text-pink hover:text-gray-400 cursor-pointer" />
+            </NavLink>
         </div>
             
          </div>
