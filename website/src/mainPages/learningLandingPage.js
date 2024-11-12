@@ -1,5 +1,6 @@
 import React from 'react';
 import LearningNavbar from '../components/learningNav';
+//this is going to be worked on by cyd
 
 export default function LearningHome() {
     return (
