@@ -10,7 +10,7 @@ import logo from '../images/qvcademy_logo_11_8.png';
 
 export default function Login() {
     return (
-        <div className="bg-gradient-to-r from-teal from-50% to-purple to-50% h-screen">
+        <div className="bg-gradient-to-r from-teal from-50% to-purple  h-screen">
             <div className="flex justify-between">
                 <div> 
                     <h1>This is where the login info goes</h1>
