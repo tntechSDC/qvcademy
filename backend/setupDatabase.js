@@ -1,6 +1,6 @@
 //this file will be used to set up the database located in the database.db file
 
-const sqlite3 = require('splite3').verbose();
+const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./database.db');
 
 db.serialize(() => {

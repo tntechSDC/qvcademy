@@ -11,13 +11,13 @@ const HTTP_PORT = 8000;
 app.use(cors());
 app.use(express.json());
 
-const conUsers = new Pool({
-    user: connectionDetails.env.PG_USER,
-    host: connectionDetails.env.PG_HOST,
-    database: connectionDetails.env.PG_DATABASE,
-    password: connectionDetails.env.PG_PASSWORD,
-    port: connectionDetails.env.PG_PORT,
-});
+// const conUsers = new Pool({
+//     user: connectionDetails.env.PG_USER,
+//     host: connectionDetails.env.PG_HOST,
+//     database: connectionDetails.env.PG_DATABASE,
+//     password: connectionDetails.env.PG_PASSWORD,
+//     port: connectionDetails.env.PG_PORT,
+// });
 
 app.listen(HTTP_PORT, () => {
     console.log('App Listening on port', HTTP_PORT)
