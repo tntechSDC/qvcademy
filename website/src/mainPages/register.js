@@ -44,6 +44,14 @@ export default function Register() {
             //if it succeeds, displays a success message using an alert
             alert(response.data.message);
             setError(''); //clear any previous errors
+
+            // Clear out input fields after successful submission
+            setFormData({
+                username: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+            });
         } catch (err) {
             console.error('Error registering user:', err.response.data);
             alert(err.response.data.error || 'Registration failed');
@@ -62,13 +70,14 @@ export default function Register() {
                 <div className="pt-32 pr-56 text-center">
                     <h1 className="text-purple text-5xl font-mono font-bold">Register</h1>
                     <h2 className="text-light-gray pt-2 font-bold">quick versatile coding starts here</h2>
-                    
+                    <form onSubmit={handleSubmit}>
                     <label className="block text-left text-light-gray mb-2 mt-8 font-bold" htmlFor="username">Username</label>
                     <input
                         type="text"
                         value={formData.username}
                         onChange={handleChange}
-                        id="username"
+                            id="username"
+                            name="username"
                         className="border-2 border-light-gray bg-transparent p-2 rounded w-full font-bold focus:outline-none focus:ring-2 focus:ring-purple text-light-gray"
                         placeholder="Pick your username"
                         required
@@ -76,7 +85,8 @@ export default function Register() {
                     <label className="block text-left text-light-gray mb-2 mt-2 font-bold" htmlFor="Email">Email</label>
                     <input
                         type="text"
-                        id="email"
+                            id="email"
+                            name="email"
                         value={formData.email}
                         onChange={handleChange}
                         className="border-2 border-light-gray bg-transparent font-bold p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-purple text-light-gray"
@@ -85,8 +95,9 @@ export default function Register() {
                     />
                     <label className="block text-left text-light-gray mb-2 mt-2 font-bold" htmlFor="password">Password</label>
                     <input
-                        type="text"
-                        id="password"
+                        type="password"
+                            id="password"
+                            name="password"
                         value={formData.password}
                         onChange={handleChange}
                         className="border-2 border-light-gray bg-transparent font-bold p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-purple text-light-gray"
@@ -95,8 +106,9 @@ export default function Register() {
                     />
                     <label className="block text-left text-light-gray mb-2 mt-2 font-bold" htmlFor="confirmPassword">Confirm Password</label>
                     <input
-                        type="text"
-                        id="confirmPassword"
+                        type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
                         className="border-2 border-light-gray bg-transparent font-bold p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-purple text-light-gray"
                         placeholder="Confirm your secure password"
                         value={formData.confirmPassword}
@@ -107,6 +119,7 @@ export default function Register() {
                     <button type="submit" className="bg-purple text-light-gray hover:bg-dark-purple font-bold mt-8 rounded w-1/2 h-10">
                         Sign Up
                     </button>
+                    </form>
                     <p className="pt-8 text-purple text-xl font-bold">Already have an account?</p>
                     <NavLink to="/login" className="text-pink font-bold hover:text-purple mt-4">Login</NavLink>
                 </div>
