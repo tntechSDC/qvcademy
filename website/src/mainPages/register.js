@@ -37,13 +37,15 @@ export default function Register() {
             return;
         }
         //try catch basically just means try to run this code and if theres an error, run this other code
-        //
         try {
             //tries to send formData to the backend through axios (HTTP request library)
             const response = await axios.post('http://localhost:8000/api/register', formData);
             //if it succeeds, displays a success message using an alert
             alert(response.data.message);
             setError(''); //clear any previous errors
+
+            //store jwt in localStorage
+            localStorage.setItem('token', response.data.token);
 
             // Clear out input fields after successful submission
             setFormData({
@@ -127,3 +129,19 @@ export default function Register() {
         </div>
     )
 }
+//REDUNDANT CODE, HERE ONLY TO LOOK BACK IT, WILL BE DELETED IN PRODUCTION
+// // Example of making an authenticated request
+// const makeAuthenticatedRequest = async () => {
+//     const token = localStorage.getItem('token');
+    
+//     try {
+//       const response = await axios.get('http://localhost:5000/api/protected', {
+//         headers: {
+//           Authorization: token // Send the token in the Authorization header
+//         }
+//       });
+//       console.log(response.data);
+//     } catch (error) {
+//       console.error('Failed to make authenticated request', error);
+//     }
+//   };

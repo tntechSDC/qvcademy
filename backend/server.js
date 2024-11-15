@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 //this connects to our sqlite database
 const dataBase = new sqlite3.Database('./database.db');
 
+//post request for registration
 app.post('/api/register', (req, res, next) => {
     const { username, email, password } = req.body;
 
@@ -49,9 +50,51 @@ app.post('/api/register', (req, res, next) => {
     dataBase.close();
 });
 
+//post request for login
+app.post('/api/login', (req, res) => {
+    const { email, password } = req.body;
+
+    const command = 'SELECT * FROM tblUsers WHERE email = ?';
+    dataBase.get(command, [email], (err, user) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database error' });
+        }
+        if (user == false) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        //compare provided pass with hashed pass in database
+        const isPasswordValid = bcrypt.compareSync(password, user.password);
+        if (isPasswordValid == false) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        //generating a JWT token for authenticated user
+        const token = jwt.sign(
+            { userId: user.id, username: user.username },
+            Key,
+            { expiresIn: '6h' } // token expiration time
+        );
+
+        res.json({ message: 'Login successful', token });
+    });
+
+    dataBase.close();
+})
+
 //authenticate JWT for protected routes
 function authenticateToken(req, res, next) {
+    //token is sent by client to authorization header
     const token = req.headers['authorization'];
+    //check if token exists
+    if (token == false) return res.sendStatus(403); //no token provided
+
+    //verifies the validity of the tokens, first decodes the token, the verifies it was signed by our key, then checks that it hasn't expired 
+    jwt.verify(token, Key, (err, user) => {
+        if (err) return res.sendStatus(403); // invalid token checking
+        req.user = user; //Attach user info to request, allows route handlers and middleware to access user info
+        next(); //pass control to the next function in the stack
+    });
 }
 
 app.listen(HTTP_PORT, () => {
