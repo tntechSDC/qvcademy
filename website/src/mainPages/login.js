@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import logo from '../images/qvcademy_logo_11_8.png';
 import styles from './css/loginPage.module.css';
-import axios from 'axios';
+import { useAuth } from '../AuthContext.js';
 
 export default function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
-    const [error, setError] = useState('');
+    const { signIn } = useAuth();
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,22 +15,7 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        try {
-            const response = await axios.post('http://localhost:8000/api/login', {
-                email: formData.email,
-                password: formData.password
-            });
-
-            //Store the token in localStorage
-            localStorage.setItem('token', response.data.token);
-
-            alert('Login successful!');
-            setError('');
-            // Redirect or update UI based on login
-        } catch (err) {
-            setError(err.response.data.error || 'Login failed');
-        }
+        signIn(formData.email, formData.password);
     };
 
     return (

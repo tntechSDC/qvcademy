@@ -1,16 +1,20 @@
+require('dotenv').config({ debug: true });
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 
 const app = express();
 const HTTP_PORT = 8000; //port that our app is listening on
 
 //remains the same for all users, used to sign and verify all JWT tokens
 const Key = process.env.SECRET_KEY;
+
+if (!process.env.SECRET_KEY) {
+    console.error("SECRET_KEY is missing!");
+}
 
 //tools for communicating with the database and getting info
 app.use(cors());
@@ -41,13 +45,12 @@ app.post('/api/register', (req, res, next) => {
         }
         else {
             //generates a jwt token with user data
-            const token = jqt.sign({ userId: this.lastID, username }, connectionDetails.env.SECRET_KEY, {
+            const token = jwt.sign({ userId: this.lastID, username }, Key, {
                 expiresIn: '6h' //token expires in 6 hours
             })
-            res.status(201).json({ message: 'User registered successfully', userID: this.lastID });
+            return res.status(201).json({ message: 'User registered successfully', userID: this.lastID, token });
         }
     })
-    dataBase.close();
 });
 
 //post request for login
