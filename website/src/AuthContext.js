@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
             setToken(token);
             setIsSignedIn(true);
             localStorage.setItem('token', token);
+            alert(response.data.message);
         } catch (err) {
             console.error('Login Failed', err);
         }

@@ -26,7 +26,7 @@ export default function Login() {
                     </div>
                     <div id={styles.signInWrapper}>
                         <div id={styles.signInWrapperChild1}>Sign In</div>
-                        <div id={styles.signInWrapperChild2}>Quick, versatile coding starts here</div>
+                        <div id={styles.signInWrapperChild2}>quick, versatile coding starts here</div>
                     </div>
                 <form id={styles.loginForm} onSubmit={handleSubmit}>
                         <div id={styles.emailTextDiv} className={styles.inputText}>Email</div>
