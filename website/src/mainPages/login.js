@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import logo from '../images/qvcademy_logo_11_8.png';
 import styles from './css/loginPage.module.css';
-
-
-//the bg-gradient is for setting background colors, the h-screen is neccessary to cover the entire height of the screen
-//then flex justify-between creates a row with the two nested div elements
-//the h1 tag is just there as a place holder for your code for the login, that's where the password and email/username should go 
-//you can copy the code from the register screen under /mainPages/register.js for the input fields and labels
-//for spacing, use padding and margin in tailwind docs, look at other code in register page or contact quinn for support
+import { useAuth } from '../AuthContext.js';
 
 export default function Login() {
+    const [formData, setFormData] = useState({ email: '', password: '' });
+    const { signIn } = useAuth();
+
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        signIn(formData.email, formData.password);
+    };
+
     return (
         <div id={styles.loginPageRoot}>
                 <div className={styles.topLayerDiv} id={styles.leftTopLayerDiv}>
@@ -19,16 +26,16 @@ export default function Login() {
                     </div>
                     <div id={styles.signInWrapper}>
                         <div id={styles.signInWrapperChild1}>Sign In</div>
-                        <div id={styles.signInWrapperChild2}>Quick, versatile coding starts here</div>
+                        <div id={styles.signInWrapperChild2}>quick, versatile coding starts here</div>
                     </div>
-                    <form id={styles.loginForm}>
+                <form id={styles.loginForm} onSubmit={handleSubmit}>
                         <div id={styles.emailTextDiv} className={styles.inputText}>Email</div>
                         <div id={styles.emailInputWrapper} className={styles.inputWrapper}>
-                            <input type="email" className={styles.inputs}></input>
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} required className={styles.inputs}></input>
                         </div>
                         <div id={styles.passwordTextDiv} className={styles.inputText}>Password</div>
                         <div id={styles.passwordInputWrapper} className={styles.inputWrapper}>
-                            <input type="password" className={styles.inputs}></input>
+                            <input type="password" name="password" value={formData.password} onChange={handleChange} required className={styles.inputs}></input>
                         </div>
                         <div id={styles.loginOptionsWrapper}>
                             <div id={styles.rememberMeWrapper}>

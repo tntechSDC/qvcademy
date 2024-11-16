@@ -9,14 +9,18 @@ import ContactUs from './mainPages/aboutUs.js';
 import Login from './mainPages/login.js';
 import Register from './mainPages/register.js';
 import CppHome from './languagePages/cpp/cppGettingStarted.js';
+import { useAuth } from './AuthContext.js';
 
 function App() {
-  return (
+   const { signIn } = useAuth();
+   return (
      <>
         {/*routes for the code*/}
        <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/problems" element={<ProblemsHome />} />
+           <Route path="/problems" element={
+            signIn ? <ProblemsHome /> : <Route to="/login" replace />}
+           />
           <Route path="/learning" element={<LearningHome />} />
            <Route path="/get-started" element={<GettingStarted />} />
            <Route path="/contactUs" element={<ContactUs />} />
