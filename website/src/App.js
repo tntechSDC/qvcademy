@@ -8,7 +8,7 @@ import ProblemsHome from './mainPages/problemsLandingPage.js';
 import ContactUs from './mainPages/aboutUs.js';
 import Login from './mainPages/login.js';
 import Register from './mainPages/register.js';
-import CppHome from './languagePages/cpp/cppGettingStarted.js';
+import CppHome from './languagePages/cppGS.js';
 import { useAuth } from './AuthContext.js';
 import ProblemsPageTemplate from './components/problemsPageTemplate';
 import problemPages from "./problems.json";

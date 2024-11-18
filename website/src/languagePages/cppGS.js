@@ -1,5 +1,5 @@
 import React from 'react';
-import LearningNavbar from '../../components/learningNav';
+import LearningNavbar from '../components/learningNav';
 
 export default function CppHome() {
     return (
