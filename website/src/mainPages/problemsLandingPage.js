@@ -4,14 +4,14 @@ import background from '../images/problemsLandingPage_background.png';
 
 //example problems for loading in
 const initialProblems = [
-    { id: 1, title: "Two Sum", difficulty: "Easy", completed: true },
-    { id: 2, title: "Fizz Buzz", difficulty: "Easy", completed: false },
-    { id: 3, title: "Linked List Traversal", difficulty: "Medium", completed: false },
-    { id: 4, title: "Longest Repeating String", difficulty: "Hard", completed: false },
-    { id: 5, title: "Binary Search", difficulty: "Hard", completed: false },
-    { id: 6, title: "Placeholder", difficulty: "Hard", completed: false },
-    { id: 7, title: "Placeholder", difficulty: "Hard", completed: false },
-    { id: 8, title: "Placeholder", difficulty: "Hard", completed: false },
+    { id: 1, title: "Two Sum", difficulty: "Easy", completed: true, module: "Basics" },
+    { id: 2, title: "Fizz Buzz", difficulty: "Easy", completed: false, module: "Basics" },
+    { id: 3, title: "Linked List Traversal", difficulty: "Medium", completed: false, module: "Data Structures" },
+    { id: 4, title: "Longest Repeating String", difficulty: "Hard", completed: false, module: "Basics" },
+    { id: 5, title: "Binary Search", difficulty: "Hard", completed: false, module: "Basics" },
+    { id: 6, title: "Placeholder", difficulty: "Hard", completed: false, module: "Basics" },
+    { id: 7, title: "Placeholder", difficulty: "Hard", completed: false, module: "Basics" },
+    { id: 8, title: "Placeholder", difficulty: "Hard", completed: false, module: "Basics" },
   ];
 
 export default function ProblemsHome() {
@@ -46,18 +46,20 @@ export default function ProblemsHome() {
                     <button className="rounded-xl px-4 border-2 border-deep-purple hover:bg-deep-purple">Medium</button>
                     <button className="rounded-xl px-4 border-2 border-deep-purple hover:bg-deep-purple">Hard</button>
                 </div>
+                <div className="flex space-x-4">
                 <div className="container mx-auto pt-3 pl-0 pr-80">
                     <div className="bg-deep-purple shadow rounded-lg overflow-hidden">
-                        <div className="grid grid-cols-3 gap-4 bg-deep-purple p-4 font-bold text-pink">
+                        <div className="grid grid-cols-4 gap-4 bg-deep-purple p-4 font-bold text-pink">
                         <div>Title</div>
                         <div>Difficulty</div>
-                        <div>Completed</div>
+                            <div>Completed</div>
+                            <div>Module</div>
                         </div>
                         <div className="max-h-96 overflow-y-auto">
                             {problems.map((problem) => (
                             <div
                                 key={problem.id}
-                                className="grid grid-cols-3 gap-4 p-4 border-b border-pink last:border-none text-pink"
+                                className="grid grid-cols-4 gap-4 p-4 border-b border-pink last:border-none text-pink"
                             >
                                 <div>{problem.title}</div>
                                 <div
@@ -72,37 +74,40 @@ export default function ProblemsHome() {
                                 {problem.difficulty}
                                 </div>
                                 <div>
-                                <button
-                                    onClick={() => toggleCompletion(problem.id)}
-                                    className="focus:outline-none"
-                                    >
-                                    {problem.completed ? (
-                                        <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="green"
-                                        viewBox="0 0 24 24"
-                                        className="h-6 w-6"
+                                    <button
+                                        onClick={() => toggleCompletion(problem.id)}
+                                        className="focus:outline-none"
                                         >
-                                        <circle cx="12" cy="12" r="10" />
-                                        </svg>
-                                    ) : (
-                                        <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        className="h-6 w-6 text-gray-400"
-                                        >
-                                        <circle cx="12" cy="12" r="10" />
-                                        </svg>
-                                    )}
+                                        {problem.completed ? (
+                                            <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="green"
+                                            viewBox="0 0 24 24"
+                                            className="h-6 w-6"
+                                            >
+                                            <circle cx="12" cy="12" r="10" />
+                                            </svg>
+                                        ) : (
+                                            <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            viewBox="0 0 24 24"
+                                            className="h-6 w-6 text-gray-400"
+                                            >
+                                            <circle cx="12" cy="12" r="10" />
+                                            </svg>
+                                        )}
                                     </button>
                                 </div>
+                                <div>{problem.module}</div>
                             </div>))}
                         </div>
                     </div>
-                </div>
+                    </div>
+                    
+                    </div>
             </div>
             
         </div>
