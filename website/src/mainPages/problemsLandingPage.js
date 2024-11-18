@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import ProgrammingNavbar from '../components/programmingNav';
 import background from '../images/problemsLandingPage_background.png';
 
 //example problems for loading in
-const initialProblems = [
-    { id: 1, title: "Two Sum", difficulty: "Easy", completed: true, module: "Basics" },
-    { id: 2, title: "Fizz Buzz", difficulty: "Easy", completed: false, module: "Basics" },
-    { id: 3, title: "Linked List Traversal", difficulty: "Medium", completed: false, module: "Data Structures" },
-    { id: 4, title: "Longest Repeating String", difficulty: "Hard", completed: false, module: "Basics" },
-    { id: 5, title: "Binary Search", difficulty: "Hard", completed: false, module: "Basics" },
-    { id: 6, title: "Placeholder", difficulty: "Hard", completed: false, module: "Basics" },
-    { id: 7, title: "Placeholder", difficulty: "Hard", completed: false, module: "Basics" },
-    { id: 8, title: "Placeholder", difficulty: "Hard", completed: false, module: "Basics" },
-  ];
+import initialProblems from "../problems.json";
 
 export default function ProblemsHome() {
     const [problems, setProblems] = useState(initialProblems);
@@ -61,7 +53,9 @@ export default function ProblemsHome() {
                                 key={problem.id}
                                 className="grid grid-cols-4 gap-4 p-4 border-b border-pink last:border-none text-pink"
                             >
-                                <div>{problem.title}</div>
+                                <NavLink to={`/problems/${problem.id}`} className="hover:underline">
+                                    {problem.title}
+                                </NavLink>
                                 <div
                                 className={
                                     problem.difficulty === "Easy"
