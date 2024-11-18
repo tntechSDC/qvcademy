@@ -2,7 +2,7 @@
   "dependencies": {
     "concurrently": "^9.1.0"
   },
-  "scripts":{
+  "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm start",
     "client": "cd website && npm start"
