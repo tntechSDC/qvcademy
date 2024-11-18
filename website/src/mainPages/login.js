@@ -8,14 +8,23 @@ export default function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const { signIn } = useAuth();
 
-
+    //this handles taking in data from the input fields by id name
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    //sends data to the backend based on the sign in function defined in AuthContext.js
     const handleSubmit = async (e) => {
         e.preventDefault();
         signIn(formData.email, formData.password);
+
+        // Clear out input fields after successful submission
+        setFormData({
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        });
     };
 
     return (
@@ -47,7 +56,10 @@ export default function Login() {
                         </div>
                         <div id={styles.submitButtonWrapper}>
                             <input type="submit" value="Sign In" id={styles.submitButton}></input>
-                        </div>
+                    </div>
+                    <button type="submit" className="bg-purple text-light-gray hover:bg-dark-purple font-bold mt-8 rounded w-1/2 h-10">
+                        Sign In
+                    </button>
                     </form>
                     <div>
                         <div>or sign in another way?</div>

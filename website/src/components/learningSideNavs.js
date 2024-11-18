@@ -36,6 +36,12 @@ export default function SideNav() {
                     <li className="px-4 py-2 text-pink hover:bg-purple">
                         <NavLink to="/get-started">Javascript</NavLink>
                     </li>
+                    <li className="px-4 py-2 text-pink hover:bg-purple">
+                        <NavLink to="/get-started">Python</NavLink>
+                    </li>
+                    <li className="px-4 py-2 text-pink hover:bg-purple">
+                        <NavLink to="/get-started">Lua</NavLink>
+                    </li>
                 </ul>
             </nav>
         </div>

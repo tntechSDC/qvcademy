@@ -19,12 +19,13 @@ export const AuthProvider = ({ children }) => {
 
     const signIn = async (email, password) => {
         try {
-            const response = await axios.post('http://localhost:8000/login', { email, password });
+            const response = await axios.post('http://localhost:8000/api/login', { email, password });
             const { token } = response.data;
             setToken(token);
             setIsSignedIn(true);
             localStorage.setItem('token', token);
             alert(response.data.message);
+            console.log(response.data.message)
         } catch (err) {
             console.error('Login Failed', err);
         }
