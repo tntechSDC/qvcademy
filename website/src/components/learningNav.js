@@ -1,30 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import logo from "../images/qvcademy_logo_11_8.png";
 import { UserCircleIcon } from '@heroicons/react/24/solid';
 import { NavLink } from "react-router-dom";
 //quinn worked on this, ask me if you have questions on this code
 
 export default function LearningNavbar() {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const dropdownRef = useRef(null); //holds a reference to dropdown container
-
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        function handleClickOutside(event) {
-            // Check if the click was outside the dropdown
-            if (dropdownRef.current && dropdownRef.current.contains(event.target) === false) {
-                setDropdownOpen(false); //closes the drop down
-            }
-        }
-        
-        // Bind the event listener
-        document.addEventListener('mousedown', handleClickOutside);
-        
-        // Clean up the event listener on close
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
-
-    const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
     return <nav className="fixed top-0 bg-purple bg-opacity-40 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between space-x-4">   

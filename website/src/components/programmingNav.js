@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 //quinn worked on this, ask me if you have questions on this code
 
 export default function ProgrammingNavbar() {
-    return <nav className="bg-purple fixed top-0 w-full">
+    return <nav className="fixed top-0 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between space-x-4">   
               {/* Links on the left */}
@@ -17,7 +17,7 @@ export default function ProgrammingNavbar() {
                 <NavLink to="/get-started" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Get Started</NavLink>
                 <NavLink to="/problems" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Program</NavLink>
                 <NavLink to="/learning" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Learn</NavLink>
-                <NavLink to="/contactUs" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Contact</NavLink>
+                <NavLink to="/contactUs" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">Donate</NavLink>
           </div>
             <NavLink to="/login" className="text-pink hover:bg-dark-purple px-3 py-2 rounded">
                 <UserCircleIcon className="h-10 w-10 text-pink hover:text-gray-400 cursor-pointer" />
