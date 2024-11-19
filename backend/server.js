@@ -1,13 +1,17 @@
-require('dotenv').config({ debug: true });
 const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-const bodyParser = require('body-parser');
 const cors = require('cors');
+const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const app = express();
 const HTTP_PORT = 8000; //port that our app is listening on
+
+//tools for communicating with the database and getting info
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //remains the same for all users, used to sign and verify all JWT tokens
 const Key = process.env.SECRET_KEY;
@@ -18,7 +22,7 @@ if (!process.env.SECRET_KEY) {
 
 //tools for communicating with the database and getting info
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 //this connects to our sqlite database
 const dataBase = new sqlite3.Database('./database.db');
@@ -53,36 +57,50 @@ app.post('/api/register', (req, res, next) => {
     })
 });
 
+app.post('/test', (req, res, next) => {
+    console.log("Test body:", req.body); // Log what you're receiving
+    res.json({ message: 'Test successful' });
+});
+
+
 //post request for login
 app.post('/api/login', (req, res) => {
-    const { email, password } = req.body;
+    const Email = req.body.email;
+    const password = req.body.password;
 
-    const command = 'SELECT * FROM tblUsers WHERE email = ?';
-    dataBase.get(command, [email], (err, user) => {
+    console.log(`Executing query with email: ${Email}`);
+
+    const command = 'SELECT * FROM tblUsers WHERE Email = ?';
+    dataBase.get(command, [Email], (err, user) => {
         if (err) {
             return res.status(500).json({ error: 'Database error' });
         }
         if (user == false) {
             return res.status(404).json({ error: 'User not found' });
         }
+        console.log(user);
+
+        // Check if user is undefined or null
+        if (!user) {
+            console.log("User not found with email:", Email);
+            return res.status(404).json({ error: 'User not found' });
+        }
 
         //compare provided pass with hashed pass in database
-        const isPasswordValid = bcrypt.compareSync(password, user.password);
+        const isPasswordValid = bcrypt.compareSync(password, user.Password);
         if (isPasswordValid == false) {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
 
         //generating a JWT token for authenticated user
         const token = jwt.sign(
-            { userId: user.id, username: user.username },
+            { userId: user.id, username: user.Username },
             Key,
             { expiresIn: '6h' } // token expiration time
         );
 
-        res.json({ message: 'Login successful', token });
+        return res.json({ message: 'Login successful', token });
     });
-
-    dataBase.close();
 })
 
 //authenticate JWT for protected routes
@@ -101,5 +119,5 @@ function authenticateToken(req, res, next) {
 }
 
 app.listen(HTTP_PORT, () => {
-    console.log('Server running on http://localhost:${HTTP_PORT}');
+    console.log('Server running on http://localhost:8000');
 })

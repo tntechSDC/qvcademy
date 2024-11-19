@@ -8,8 +8,10 @@ import ProblemsHome from './mainPages/problemsLandingPage.js';
 import ContactUs from './mainPages/aboutUs.js';
 import Login from './mainPages/login.js';
 import Register from './mainPages/register.js';
-import CppHome from './languagePages/cpp/cppGettingStarted.js';
+import CppHome from './languagePages/cppGS.js';
 import { useAuth } from './AuthContext.js';
+import ProblemsPageTemplate from './components/problemsPageTemplate';
+import problemPages from "./problems.json";
 
 function App() {
    const { signIn } = useAuth();
@@ -27,7 +29,15 @@ function App() {
            <Route path="/login" element={<Login />} />
            <Route path="/register" element={<Register />} />
            <Route path="/cppHome" element={<CppHome />} />
-          <Route path="*" element={<NoPage />} />
+            <Route path="*" element={<NoPage />} />
+            {/* Dynamic routes for each page */}
+          {problemPages.map((page) => (
+            <Route
+              key={page.id}
+              path={`/problems/${page.id}`}
+              element={<ProblemsPageTemplate {...page} />}
+            />
+          ))}
        </Routes>
     </>
  );

@@ -1,0 +1,22 @@
+ [
+    { 
+        "id": 1, 
+        "title": "Two Sum",
+         "difficulty": "Easy", 
+         "completed": true, 
+         "module": "Basics" 
+    },
+    { 
+        "id": 2, 
+        "title": "Fizz Buzz", 
+        "difficulty": "Easy", 
+        "completed": false, 
+        "module": "Basics" 
+    },
+    { "id": 3, "title": "Linked List Traversal", "difficulty": "Medium", "completed": false, "module": "Data Structures" },
+    { "id": 4, "title": "Longest Repeating String", "difficulty": "Hard", "completed": false, "module": "Basics" },
+    { "id": 5, "title": "Binary Search", "difficulty": "Hard", "completed": false, "module": "Basics" },
+    { "id": 6, "title": "Placeholder", "difficulty": "Hard", "completed": false, "module": "Basics" },
+    { "id": 7, "title": "Placeholder", "difficulty": "Hard", "completed": false, "module": "Basics" },
+    { "id": 8, "title": "Placeholder", "difficulty": "Hard", "completed": false, "module": "Basics" }
+  ]

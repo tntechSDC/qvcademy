@@ -69,7 +69,7 @@ export default function Register() {
                         <img src={logo} alt="Brand Logo" className="h-72 w-auto" />
                     </NavLink>
                 </div>
-                <div className="pt-32 pr-56 text-center">
+                <div className="pt-16 pr-56 text-center">
                     <h1 className="text-purple text-5xl font-mono font-bold">Register</h1>
                     <h2 className="text-light-gray pt-2 font-bold">quick versatile coding starts here</h2>
                     <form onSubmit={handleSubmit}>
@@ -118,11 +118,11 @@ export default function Register() {
                         required
                     />
                     {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error if exists */}
-                    <button type="submit" className="bg-purple text-light-gray hover:bg-dark-purple font-bold mt-8 rounded w-1/2 h-10">
+                    <button type="submit" className="bg-purple text-light-gray hover:bg-dark-purple font-bold mt-32 rounded w-1/2 h-10">
                         Sign Up
                     </button>
                     </form>
-                    <p className="pt-8 text-purple text-xl font-bold">Already have an account?</p>
+                    <p className="pt-4 text-purple text-xl font-bold">Already have an account?</p>
                     <NavLink to="/login" className="text-pink font-bold hover:text-purple mt-4">Login</NavLink>
                 </div>
             </div>
