@@ -68,8 +68,6 @@ app.post('/api/login', (req, res) => {
     const Email = req.body.email;
     const password = req.body.password;
 
-    console.log(`Executing query with email: ${Email}`);
-
     const command = 'SELECT * FROM tblUsers WHERE Email = ?';
     dataBase.get(command, [Email], (err, user) => {
         if (err) {
