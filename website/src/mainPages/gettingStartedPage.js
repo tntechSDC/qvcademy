@@ -4,11 +4,12 @@ import FunctionalNavbar from '../components/navbarDefault';
 
 export default function GettingStarted() {
     return (
-        <div className="bg-purple h-screen flex">
-            <div className="text-left mt-16 pl-30">
-                <h1 className="text-pink">Welcome</h1>
-            </div>
+        <div className="bg-purple h-screen">
             <FunctionalNavbar />
+            <div className="flex justify-center pt-12">
+                <h1 className="mt-12 text-pink text-7xl">Getting Started</h1>
+            </div>
+            
         </div>
     );
 }
