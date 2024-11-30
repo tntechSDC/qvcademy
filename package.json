@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
     "axios": "^1.7.7",
     "concurrently": "^9.1.0",
     "monaco-editor": "^0.52.0"
