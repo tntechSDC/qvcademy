@@ -33,3 +33,17 @@ Section 5:
 	
 	
 	
+Problems:
+
+1. Fizzbuzz
+Write a program that receives an integer as input. For every integer (i) up until this number is reached(Including that number):
+- Output "Fizz" if i is divisible by 3
+- Output "Buzz" if i is divisible by 5
+- Output "FizzBuzz" if i is disivible by both 3 and 5
+- Else, output i
+Put newlines between each output
+
+2. Two Sum
+Take an integer for array size, a series of integers to be put into an array, and a sum integer as inputs.
+Write a program that searches the array for values that add together to equal the provided sum. 
+Output each pair of numbers as one string, with a newline separating different pairs.
