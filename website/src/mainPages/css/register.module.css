@@ -1,0 +1,28 @@
+#overallDiv {
+    background-image: url("../../images/mirroredLearningLandingPage_background.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+#rightTopDiv {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 5%;
+}
+
+#leftTopDiv {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 5%;
+}
+
+#help {
+    position: relative;
+    padding-bottom: 0px;
+}
+
+#donateLink {
+    color: rgb(0, 190, 230)
+}

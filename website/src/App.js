@@ -12,7 +12,7 @@ import CppHome from './languagePages/cppGS.js';
 import { useAuth } from './AuthContext.js';
 import ProblemsPageTemplate from './components/problemsPageTemplate';
 import problemPages from "./problems.json";
-import donatePage from './mainPages/donate.js';
+import DonatePage from './mainPages/donate.js';
 
 function App() {
    const { signIn } = useAuth();
@@ -30,7 +30,7 @@ function App() {
            <Route path="/login" element={<Login />} />
            <Route path="/register" element={<Register />} />
            <Route path="/cppHome" element={<CppHome />} />
-           <Route path="/donate" element={<donatePage />} />
+           <Route path="/donate" element={<DonatePage />} />
             <Route path="*" element={<NoPage />} />
             {/* Dynamic routes for each page */}
           {problemPages.map((page) => (
